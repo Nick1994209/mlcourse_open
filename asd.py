@@ -1,17 +1,5 @@
-import pandas as pd
-
-# df = pd.DataFrame({'A': {0: 'a', 1: 'b', 2: 'c'},
-#                    'B': {0: 1, 1: 3, 2: 5},
-#                    'C': {0: 2, 1: 4, 2: 6}})
-#
-# print(pd.melt(df, id_vars='A', value_vars=['B', 'C']))
+from sklearn.model_selection import train_test_split
 
 
-test = pd.DataFrame({'days': [1, 31, 45, None], 's': [1, 31, None, None]})
-# test['range'] = pd.cut(test.days, [0, 30, 60], labels=['a', 'b',])
-# print(test)
-
-# print(test)
-print(test.loc[:, ['days', 's',]])
-
-print(test[['s', 'days']].dropna())
+print(train_test_split([10, 11, 12,1,1,1,1,21,12,31,1,213,123,], test_size=0.3, random_state=17))
+X_train, X_valid, y_train, y_valid = train_test_split([10, 11, 12,1,1,1,1,21,12,31,1,213,123,], test_size=0.3, random_state=17)
