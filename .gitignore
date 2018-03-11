@@ -110,3 +110,4 @@ ENV/
 # data
 data/faces/
 data/news_data/
+data/stackoverflow
