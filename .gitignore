@@ -107,7 +107,7 @@ ENV/
 /out/
 *.iml
 
-# data
+data/
 data/faces/
 data/news_data/
 data/stackoverflow
