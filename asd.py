@@ -1,39 +1,27 @@
 import numpy as np
 
-a = np.array((
-    [
-        [10, 12, 13],
-        [0, 1, 2],
-    ],
-    [
-        [100, 101, 102],
-        [110, 112, 113],
-    ],
-    [
-        [100, 101, 102],
-        [110, 112, 113],
-    ],
-))
-# print(a.shape)
-#
-# print(a.ravel())
-# print(a.transpose())
+import matplotlib.pyplot as plt
 
-# print(len(a[0]))
-# print(len(a[0][0]))
-# print(len(a[0]) * len(a[0][0]))
-# print(a.reshape((len(a), len(a[0]) * len(a[0][0]))))
-# print(a.reshape((len(a), -1)))
-# print(a.reshape((a.shape[0], -1)))
-#
-# # print(a[[0, 1]])
 
-print()
+def draw(X_, y_):
+    plt.scatter(X_, y_)
+    plt.axvline(x=0)
+    plt.grid(True)
+    plt.show()
 
-print(a.reshape(-1))
 
-print(np.sort(a.reshape(-1)))
-print(np.argsort(a.reshape(-1)))
-print(a.reshape(-1)[np.argsort(a.reshape(-1))])
+x = np.arange(1, 11)
+y = 2 * x + np.random.randn(10) * 2
+X = np.vstack((x, y))
+draw(x, y)
 
-print(np.argmax(np.bincount([1, 1, 2, 5, 5, 5, 5000004])))
+Xcentered = (X[0] - x.mean(), X[1] - y.mean())
+m = (x.mean(), y.mean())
+draw(*Xcentered)
+
+covmat = np.cov(Xcentered)
+print(covmat, "\n")
+print("Variance of X: ", np.cov(Xcentered)[0, 0])
+print("Variance of Y: ", np.cov(Xcentered)[1, 1])
+print("Covariance X and Y: ", np.cov(Xcentered)[0, 1])
+print("Covariance X and Y: ", np.cov(Xcentered)[1, 0])
