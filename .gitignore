@@ -111,3 +111,7 @@ data/
 data/faces/
 data/news_data/
 data/stackoverflow
+
+jupyter_russian/homeworks/hw8/stackoverflow*
+jupyter_russian/homeworks/hw8/vw.model
+jupyter_russian/homeworks/hw8/predicted.txt
